@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     'widget_tweaks',
     'social_django',
+    'django_dropbox',
 
 ]
 

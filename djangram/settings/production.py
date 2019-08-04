@@ -10,8 +10,8 @@ ALLOWED_HOSTS = [
 ]
 
 # Dropbox for media files
-DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
-DROPBOX_OAUTH2_TOKEN = 'em1Xkx6FqgAAAAAAAAAADWVyHeQGjt6SMR6DmtRcly7Vr-yHRlxmHZ6oJdbaP5fO'
+#DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+#DROPBOX_OAUTH2_TOKEN = 'em1Xkx6FqgAAAAAAAAAADWVyHeQGjt6SMR6DmtRcly7Vr-yHRlxmHZ6oJdbaP5fO'
 
 # Social auth
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY', default='')
