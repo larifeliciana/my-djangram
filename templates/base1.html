@@ -9,11 +9,10 @@
     <title>{% block title %}{% endblock %}</title>
 
     <!-- font -->
-
-    <link href="https://fonts.googleapis.com/css?family=Oleo+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Concert+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster+Two&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Ruda&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script&display=swap" rel="stylesheet">
 
     <!-- css -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -21,8 +20,7 @@
 </head>
 <body>
 
-    <!-- Includes -->
-    {% include 'includes/menu.html' %}  
+    <!-- Includes -->   
     {% block body %}{% endblock %}
 
     {% block scripts %}{% endblock %}

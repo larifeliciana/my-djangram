@@ -5,28 +5,42 @@
 
 
 {% block body %}
-<section>
-    <div>
-        <a href="{% url 'posts:delete_post' post.pk %}">Deletar post</a>
+<section class="detail-post">
+    
+        <div class="post">
+        <div class="post-menu">
 
-        <p>Autor: {{ post.author }}</p>
-        <img src="{{ post.image.url }}" width="80px" height="80px">
-        <p>Descrição: {{ post.description }}</p>
+        <a href="{% url 'posts:delete_post' post.pk %}"><img src="{% static 'img/delete.png' %}" width=40px height="40px"></a>
+        <a href="{% url 'posts:create_commet' %}" ><img src="{% static 'img/comment.png' %}" width=40px height="40px"></a>
+        
+        </div>
+        {% with post=post  %}
+                {% include 'includes/card.html' %}
+            {% endwith %}
+       </div>
 
+        <div class="comments">
         <h2>Comentários</h2>
 
         <!-- Using get_context_data -->
+
         {% for c in comments %}
+
+            <div class="post-card-info-top">
+            <div class="author-picture" style="background-image: url({{ c.author.picture.url }});"></div>
+            <span class="author-username">
+                <a href="{% url 'users:detail_user' c.author.pk %}">{{ c.author.username }}</a>
+            </span>
+            </div>
+            
+            
             <p>{{ c.text }}</p>
+
+        
         {% endfor %}
+        </div>
 
-        <!-- Using related_name -->
-        <!-- {% for comment in post.commentsFromPost.all %}
-            <p>{{ comment.text }}</p>
-        {% empty %}
-            <p>Este post não tem comentários.</p>
-        {% endfor %} -->
-
+          
     </div>
 </section>
 {% endblock body %}

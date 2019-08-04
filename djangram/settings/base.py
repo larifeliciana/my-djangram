@@ -160,6 +160,11 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+# Email
+EMAIL_HOST_USER = 'projetosbcc2018@gmail.com'
+EMAIL_HOST_PASSWORD ='@123minha123'
+
+
 # social_django
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',

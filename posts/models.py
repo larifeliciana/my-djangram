@@ -19,7 +19,7 @@ class Post(models.Model):
     modified_at = models.DateTimeField(verbose_name='Modificado em', auto_now=True)
 
     def __str__(self):
-        return f'Post {self.id} | Author {self.author} | Created at {self.created_at}'
+        return f'Post {self.pk} | Author {self.author} | Created at {self.created_at}'
 
     class Meta:
         verbose_name = 'Postagem'
@@ -35,7 +35,7 @@ class Comment(models.Model):
     created_at = models.DateTimeField('Criado em', auto_now_add=True)
 
     def __str__(self):
-        return f'Comment {self.id} | Author {self.author} | Post {self.post.pk} | Created at {self.created_at}'
+        return f'Comment {self.pk} | Author {self.author} | Post {self.post.pk} | Created at {self.created_at}'
 
     class Meta:
         verbose_name = 'Comentário'

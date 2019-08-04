@@ -6,12 +6,12 @@
 
 {% block body %}
 <section class="login-section">
-    <div class="login-container simple-container">
-        <h2> Login</h2>
+   
+    <div class="login-container">
+        <h1 class="djangram">Djangram</h1>
+   
+        <form method="post">
 
-        <a class="social-login-link" href="{% url "social:begin" "google-oauth2" %}">Login com Google</a>
-
-        <form class="login-form simple-form" method="post">
             {% csrf_token %}
 
             {{ form.as_p }}
@@ -19,5 +19,6 @@
             <input class="simple-input-submit" type="submit" value="Logar">
         </form>
     </div>
+
 </section>
 {% endblock body %}

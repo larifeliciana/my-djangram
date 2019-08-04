@@ -1,6 +1,6 @@
 from django import forms
 
-from posts.models import Post
+from posts.models import Post, Comment
 
 # Django Model form
 # https://docs.djangoproject.com/pt-br/2.2/topics/forms/modelforms/
@@ -16,3 +16,12 @@ class PostCreateForm(forms.ModelForm):
         self.fields['author'].widget = forms.HiddenInput()
 
 
+class CommentCreateForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['author','post', 'text', ]
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['author'].initial = self.initial['user'].id
+        self.fields['author'].widget = forms.HiddenInput()
+  

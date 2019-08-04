@@ -1,0 +1,14 @@
+{% block subject %} Djangram | Novo Comentário{% endblock %}
+
+{% block html %}
+    <p>Olá, <b>{{ comment.post.author.username }}</b>!</p>
+
+    <p>Você acabou de receber o seguinte comentário em seu post "{{comment.post.description}}":      
+    </p>
+
+    <p style="font-weight: bold;">"{{comment.text}}"</p>
+    <p>Entre no Djangram e acompanhe seus comentários</p>
+
+    <p>Att., Djangram.</p>
+
+{% endblock %}

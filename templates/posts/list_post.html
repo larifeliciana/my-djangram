@@ -11,11 +11,15 @@
 
 
 {% block body %}
+
 <section class="list-post-section">
     <div class="list-post-container">
+
         {% if messages %}
             {% for message in messages %}
+
                 <p class="message">{{ message }}</p>
+
             {% endfor %}
         {% endif %}
 
@@ -26,7 +30,9 @@
 
             <a href="{% url 'posts:detail_post' p.pk %}">Ver detalhes</a>
         {% empty %}
-            <h2>Poxa, você não tem nenhum post ainda :(</h2>
+
+            <h2>Nenhum Post Públicado</h2>
+            <img src="{% static 'img/empty.svg' %}" height="200" width="200">
         {% endfor %}
     </div>
 </section>

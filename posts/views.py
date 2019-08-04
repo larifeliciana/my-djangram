@@ -4,8 +4,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
-
-from posts.forms import PostCreateForm
+from posts.helpers import send_comment_email
+from posts.forms import PostCreateForm, CommentCreateForm
 from posts.models import Post, Comment
 from posts.mixins import UserHasAccessToDeletePostMixin
 
@@ -40,6 +40,8 @@ class PostCreateView(LoginRequiredMixin, generic.CreateView):
 
 class PostDetailView(generic.DetailView):
     model = Post
+    
+   
     context_object_name = 'post'
     template_name = 'posts/detail_post.html'
 
@@ -48,9 +50,23 @@ class PostDetailView(generic.DetailView):
         context['comments'] = Comment.objects.filter(post=kwargs['object'].pk)
         return context
 
+    def get_initial(self):
+        return {
+            'user': self.request.user,
+        }
+
+    def form_valid(self, form):
+        # Mensagem estara disponivel no contexto do template
+        # linkado acima em success_url
+        messages.success(
+            self.request,
+            'Você compartilhou um novo post! Confira abaixo.'
+        )
+        return super().form_valid(form)
 
 class PostDeleteView(UserHasAccessToDeletePostMixin, generic.DeleteView):
     model = Post
+
     context_object_name = 'post'
     template_name = 'posts/delete_post.html'
     raise_exception = True
@@ -59,3 +75,27 @@ class PostDeleteView(UserHasAccessToDeletePostMixin, generic.DeleteView):
     def get_success_url(self):
         return reverse_lazy('users:detail_user', args=[self.object.author.pk])
 
+
+
+class CommentCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Comment
+    context_object_name = 'comment'
+    form_class = CommentCreateForm
+    template_name = 'posts/create_comment.html'
+    success_url = reverse_lazy('posts:list_post')     
+    def get_initial(self):
+        return {
+            'user': self.request.user,
+        }
+
+    def form_valid(self, form):
+        # Mensagem estara disponivel no contexto do template
+        # linkado acima em success_url
+       # messages.success(
+        #    self.request,
+          #  'Você compartilhou um novo post! Confira abaixo.'
+        #)#
+        self.object = form.save(commit=False)
+        self.object.save()
+        send_comment_email(self.object)
+        return super().form_valid(form)
