@@ -1,4 +1,4 @@
-##Djangram
+## Djangram
 Minha versão do sistema desenvolvido para o curso de Django da Jornada de Cursos do CITI-CIN/UFPE. 
 O Djangram é uma rede social inspirada no Instagram e desenvolvida utilizando o framework Django
 
