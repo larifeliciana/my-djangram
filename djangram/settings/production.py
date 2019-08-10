@@ -3,7 +3,7 @@ from decouple import config
 
 from djangram.settings.base import *
 
-DEBUG = False
+DEBUG = True
 
 
 
