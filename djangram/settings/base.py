@@ -102,13 +102,6 @@ DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
-#DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-   # }
-#}
-
 # Custom Users
 # https://docs.djangoproject.com/pt-br/2.2/topics/auth/customizing/#substituting-a-custom-user-model
 AUTH_USER_MODEL = 'users.User'
@@ -172,8 +165,10 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 # Email
-EMAIL_HOST_USER = 'projetosbcc2018@gmail.com'
-EMAIL_HOST_PASSWORD ='@123minha123'
+
+###Utilizar seu e-mail e senha
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD =''
 
 
 # social_django
