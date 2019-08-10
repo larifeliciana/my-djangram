@@ -1,35 +1,31 @@
-# :rocket: Djangram (django + instagram)
-Repositório do sistema elaborado para as aulas do curso de Django, realizado na Jornada de Cursos 2019 do [@CITiUFPE](https://github.com/citiufpe).
+Sistema desenvolvido para o curso de Django da Jornada de Cursos do CITI-CIN/UFPE. 
+O Djangram é uma rede social inspirada no Instagram e desenvolvida utilizando o framework Django
 
-## Deploy
-* Deploy realizado no Heroku (link abaixo)
-```bash
-https://djangram.herokuapp.com/
-```
-
-## Material de apoio
-* [Slides](https://docs.google.com/presentation/d/1sCEYy_X6CcBXsYG0vXJsIuFzy1n9NiflDpMIuDY2VVM/edit#slide=id.g5d9a19172a_0_0)
-* [Requisitos do projeto](https://gist.github.com/pamella/e4eb1427a242b75be17bd29e25e54377)
-
-Obs.: Nas anotações dos slides, há links de referência e aprofundamento.
 
 ## Como utilizar
-* Clone o projeto para seu computador
+* Clona repositório
   ```bash
-  $ git clone https://github.com/pamella/djangram.git
+  $ git clone https://github.com/larifeliciana/my-djangram
   ```
-* Inicie um ambiente virtual e instale as dependências
+* Preparando o ambiente virtual
   ```bash
   $ python3 -m venv env
   $ source env/bin/activate
   $ pip install -r requirements.txt
   ```
-* Rode as migrações
+* Roda as migrações
   ```bash
   $ python manage.py migrate
   ```
-* Inicie o servidor
+* Inicia o servidor
   ```bash
   $ python manage.py runserver
   ```
-  
+ 
+ Links úteis:
+ 
+ https://github.com/pamella/djangram
+ https://github.com/vintasoftware/django-templated-email/
+ https://www.treinaweb.com.br/blog/deploy-de-uma-aplicacao-django-no-heroku/
+ https://medium.com/@BennettGarner/deploying-django-to-heroku-connecting-heroku-postgres-fcc960d290d1
+ https://medium.com/@johngrant/deploying-a-django-app-to-heroku-226eed92d1e5
