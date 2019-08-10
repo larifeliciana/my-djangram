@@ -1,1 +1,1 @@
-web: gunicorn djangram.wsgi
+web: gunicorn djangram.wsgi --log-level=info --log-file -
