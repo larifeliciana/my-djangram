@@ -22,7 +22,12 @@ O Djangram é uma rede social inspirada no Instagram e desenvolvida utilizando o
   ```bash
   $ python manage.py runserver
   ```
- 
+ * Editar Settings
+  Nos campos abaixo adicione seu e-mail e senha
+  ```
+  EMAIL_HOST_USER = ''
+  EMAIL_HOST_PASSWORD =''
+```
  Links úteis:
  
  * https://github.com/pamella/djangram/
