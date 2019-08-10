@@ -1,4 +1,5 @@
-Sistema desenvolvido para o curso de Django da Jornada de Cursos do CITI-CIN/UFPE. 
+##Djangram
+Minha versão do sistema desenvolvido para o curso de Django da Jornada de Cursos do CITI-CIN/UFPE. 
 O Djangram é uma rede social inspirada no Instagram e desenvolvida utilizando o framework Django
 
 
@@ -24,7 +25,7 @@ O Djangram é uma rede social inspirada no Instagram e desenvolvida utilizando o
  
  Links úteis:
  
- https://github.com/pamella/djangram
+ https://github.com/pamella/djangram/
  https://github.com/vintasoftware/django-templated-email/
  https://www.treinaweb.com.br/blog/deploy-de-uma-aplicacao-django-no-heroku/
  https://medium.com/@BennettGarner/deploying-django-to-heroku-connecting-heroku-postgres-fcc960d290d1
