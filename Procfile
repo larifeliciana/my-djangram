@@ -1,1 +1,1 @@
-web: gunicorn djangram.wsgi
+web: gunicorn my-djangram.wsgi
