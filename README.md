@@ -1,12 +1,13 @@
 ## Djangram
 Minha versão do sistema desenvolvido para o curso de Django da Jornada de Cursos do CITI-CIN/UFPE. 
-O Djangram é uma rede social inspirada no Instagram e desenvolvida utilizando o framework Django
+O Djangram é uma rede social inspirada no Instagram e desenvolvida utilizando o framework Django, HTML e CSS.
 
 
 ## Como utilizar
 * Clona repositório
   ```bash
   $ git clone https://github.com/larifeliciana/my-djangram
+  $ cd my-djangram
   ```
 * Preparando o ambiente virtual
   ```bash
